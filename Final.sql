@@ -23,9 +23,11 @@ SELECT  *,
 				THEN (SELECT RATE FROM Courier_rates WHERE Zone = 'fwd_d_fixed')
 
 			WHEN ROUND(total_weight,1) > 0.5 AND zone = 'b' AND [Type of Shipment] = 'Forward Charges' 
-				THEN (SELECT Rate FROM Courier_rates WHERE Zone = 'fwd_b_fixed') + ((SELECT Rate FROM Courier_rates WHERE Zone = 'fwd_b_additional') * (CEILING(ROUND(total_weight,1)/0.5)- 1))
+				THEN (SELECT Rate FROM Courier_rates WHERE Zone = 'fwd_b_fixed') + 
+				((SELECT Rate FROM Courier_rates WHERE Zone = 'fwd_b_additional') * (CEILING(ROUND(total_weight,1)/0.5)- 1))
 			WHEN ROUND(total_weight,1) > 0.5 AND zone = 'd' AND [Type of Shipment] = 'Forward Charges'
-				THEN (SELECT Rate FROM Courier_rates WHERE Zone = 'fwd_d_fixed') + ((SELECT Rate FROM Courier_rates WHERE Zone = 'fwd_d_additional') * (CEILING(ROUND(total_weight,1)/0.5)- 1))
+				THEN (SELECT Rate FROM Courier_rates WHERE Zone = 'fwd_d_fixed') + 
+				((SELECT Rate FROM Courier_rates WHERE Zone = 'fwd_d_additional') * (CEILING(ROUND(total_weight,1)/0.5)- 1))
 
 
 			----------------------------------------------------------------------------------------------------------------------------------------------------
