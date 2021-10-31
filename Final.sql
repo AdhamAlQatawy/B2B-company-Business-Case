@@ -59,7 +59,7 @@ FROM company_table
 
 			----------------------------------------------------------------------------------------------------------------------------------------------------
 
--- Find the difference between the actual billing amount and the courier billing amount
+-- Getting the final table that the company need
 CREATE OR ALTER VIEW Final_result AS  
 	SELECT b.order_num, b.total_weight as company_weight, b.Billing_Amount as company_amount,
 			c.[Charged Weight] as courier_weight, c.[Billing Amount ] as courier_amount
