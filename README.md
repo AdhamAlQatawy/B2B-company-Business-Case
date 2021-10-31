@@ -3,3 +3,5 @@
 - In the files you will find the SQL code, the Excel file contining the results, and finally the Report as Power BI file 
 - You will also find A pdf file called "Business Case" which has the business case in more details 
 - You will also find a foder named "Tables" which has all the tables you will need for this project 
+
+##### The data is from Kaggle and this is its original link: https://www.kaggle.com/purvanahar/b2b-ecommerce-courier-dataset
